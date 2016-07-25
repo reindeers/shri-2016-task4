@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="stylesheet" href="fonts/roboto/css/fonts.css">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+      </ion-header-bar>
+
+          <ion-content class="has-header" padding="true">
+              <h1 class=" " style="color: rgb(0, 0, 0);" >список1</h1>
+              <div class="list " ng-controller="TodoListController as todoList">
+              <!--  <span class="delete" ng-click="deleteAllTasks()">X</span><p>Delete all tasks</p>-->
+                  <ul >
+                    <li ng-repeat="todo in todoList.todos">
+                      <label class="checkbox">
+                        <ion-checkbox ng-model="todo.done"><span class="done-{{todo.done}}">{{todo.text}}</span></ion-checkbox>
+                      </label><span class="delete" ng-click="deleteTask($index)">X</span>
+                    </li>
+                  </ul>
+
+                  <div style="width: 283px; height: 45px;" class="spacer"></div>
+
+                  <form ng-submit="todoList.addTodo()">
+                    <input placeholder="Add task" type="text" ng-model="todoList.todoText">
+                    <button class=" button button-positive  button-block " id="home-button1" type="submit">Tap me!</button>
+                  </form>
+
+              </div>
+          </ion-content>
+
+    </ion-pane>
+  </body>
+
+</html>

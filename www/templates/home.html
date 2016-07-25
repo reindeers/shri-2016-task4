@@ -1,0 +1,21 @@
+
+    <ion-content class="has-header" padding="true">
+        <h1 class=" " style="color: rgb(0, 0, 0);" >список1</h1>
+        <div class="list " ng-controller="TodoListController as todoList">
+            <ul >
+              <li ng-repeat="todo in todoList.todos">
+                <label class="checkbox">
+                  <ion-checkbox ng-model="todo.done"><span class="done-{{todo.done}}">{{todo.text}}</span></ion-checkbox>
+                </label>
+              </li>
+            </ul>
+
+            <div style="width: 283px; height: 45px;" class="spacer"></div>
+
+            <form ng-submit="todoList.addTodo()">
+              <input placeholder="Add task" type="text" ng-model="todoList.todoText">
+              <button class=" button button-positive  button-block " id="home-button1" type="submit">Tap me!</button>
+            </form>
+
+        </div>
+    </ion-content>
