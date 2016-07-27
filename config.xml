@@ -20,7 +20,8 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
-  <gap:plugin name="org.apache.cordova.vibration"  />
+  <plugin name="cordova-plugin-vibration" source="npm">
+  </plugin>
   <feature name="Notification">
       <param name="android-package" value="org.apache.cordova.Notification" />
   </feature>
