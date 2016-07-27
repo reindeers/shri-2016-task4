@@ -20,10 +20,12 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
-  <plugin name="cordova-plugin-vibration" source="npm">
-  </plugin>
+
   <feature name="Notification">
       <param name="android-package" value="org.apache.cordova.Notification" />
+  </feature>
+  <feature name="Vibration">
+    <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
   </feature>
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
@@ -44,11 +46,6 @@
     <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
-
-
-
-(in app/AndroidManifest.xml)
-<uses-permission android:name="android.permission.VIBRATE" />
 
   </platform>
   <platform name="ios">
